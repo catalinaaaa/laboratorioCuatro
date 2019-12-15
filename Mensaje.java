@@ -3,25 +3,24 @@ import java.util.Date;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
-
 /**
- * Write a description of class Llamada here.
+ * Write a description of class Mensaje here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Llamada{
+public class Mensaje {
   private String numeroDestino = null;
-  private int minutos = 0;
+  private String mensaje = null;
   private Date fechaHora = null;
   
-  private static int cantidadLlamadas = 0;
+  private static int cantidadMensajes = 0;
   
-  public Llamada(String pNumeroDestino, int pMinutos){
+  public Mensaje(String pNumeroDestino, String mensaje){
     setNumDestino(pNumeroDestino);
-    setMinutos(pMinutos);
+    setMensaje(mensaje);
   }
-  
+      
   public void setNumDestino(String pNumDestino){
     this.numeroDestino = pNumDestino; 
   }
@@ -30,28 +29,13 @@ public class Llamada{
     return numeroDestino;  
   }
   
-  public void setCantidadLlamadas(int pCantidadLlamadas){
-    this.cantidadLlamadas = pCantidadLlamadas; 
+  
+  public void setMensaje(String pMensaje){
+    this.mensaje = pMensaje; 
   }
   
-  public int getCantidadLlamadas(){
-    return cantidadLlamadas;  
-  }
-  
-  public void setNumeroDestino(String pNumeroDestino){
-    this.numeroDestino = pNumeroDestino; 
-  }
-  
-  public String getNumeroDestino(){
-    return numeroDestino;  
-  }
-  
-  public void setMinutos(int pMinutos){
-    this.minutos = pMinutos; 
-  }
-  
-  public int getMinutos(){
-    return minutos;  
+  public String getMensaje(){
+    return mensaje;  
   }
   
   public void setFechaHora(){
@@ -63,6 +47,14 @@ public class Llamada{
   public String getFechaHora(){
     SimpleDateFormat mascara = new SimpleDateFormat("dd/MM/yy HH:mm");
     return mascara.format(fechaHora);
+  }
+  
+  public void setCantidadMensajes(int pCantidadMensajes){
+    this.cantidadMensajes = pCantidadMensajes; 
+  }
+  
+  public int getCantidadMensajes(){
+    return cantidadMensajes;  
   }
   
 }
